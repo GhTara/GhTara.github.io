@@ -246,12 +246,12 @@ def render_journal(content, personal=False):
     output = page_head(page)
     if personal:
         output = f'''<header class="page-head life-head">
-  <div>
+  <div class="life-floral-cover" aria-hidden="true"></div>
+  <div class="life-title-panel">
     <p class="persian-label" lang="fa" dir="rtl">{escape(page['persian_title'])}</p>
     <h1>{escape(page['title'])}</h1>
     <p class="life-intro">{escape(page['introduction'])}</p>
   </div>
-  <img class="tile-motif" src="assets/persian-tile.svg" alt="" aria-hidden="true" width="160" height="160">
 </header>'''
     notes = sorted(entries(content, 'entry'), key=lambda item: entry_date(item[1]), reverse=True)
     if not notes:
@@ -318,7 +318,7 @@ def build_pages():
             values[key] = safe_url(site[key])
         values.update(
             title=escape(page['title']), description=escape(page['description']),
-            theme_color='#faf7ef' if name == 'life' else '#faf9f6',
+            theme_color='#f8f2e2' if name == 'life' else '#faf9f6',
             body_class=f' class="{name}-page"',
             layout_class='journal-layout' if name in ('writing', 'life') else 'academic-layout',
             profile='' if name in ('writing', 'life') else render_profile(site, content['site']['profile'], content['home']['page']),

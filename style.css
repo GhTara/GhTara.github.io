@@ -180,13 +180,9 @@ main:focus { outline: none; }
 /* Personal pages retain their own Persian-inspired atmosphere. */
 .journal-layout { max-width: 920px; padding-top: 54px; }
 .empty-note { border: 1px solid var(--line); padding: 25px; background: white; color: var(--muted); }
-.life-page { --paper: #faf7ef; --accent: #32615d; --line: #ddd5c4; }
-.life-head { display: grid; grid-template-columns: minmax(0, 1fr) 160px; align-items: center; gap: 56px; padding-bottom: 42px; }
 .persian-label { margin-bottom: 10px; color: var(--accent); text-align: left; font: 2rem/1.5 "Amiri", serif; }
 .life-intro { max-width: 520px; color: var(--muted); font-size: 1.1rem; }
-.tile-motif { width: 160px; height: auto; }
 .journal-entry { border-top: 1px solid var(--line); max-width: 760px; padding-top: 30px; }
-.life-page .journal-entry { border-top-color: #b78a4a; }
 .journal-entry + .journal-entry { margin-top: 40px; }
 .journal-entry h2 { max-width: 690px; margin-bottom: 20px; }
 .journal-entry > a { font-size: .86rem; }
@@ -273,8 +269,6 @@ main:focus { outline: none; }
   .case-heading h2 { font-size: 1.7rem; }
   .case-study { padding-block: 28px; }
   .notebook-link { flex-direction: column; gap: 12px; padding: 20px; }
-  .life-head { grid-template-columns: 1fr; gap: 24px; }
-  .tile-motif { width: 90px; }
   .journal-entry h2 { font-size: 1.75rem; }
   .footer-inner { flex-direction: column; gap: 18px; }
 }
@@ -283,6 +277,105 @@ main:focus { outline: none; }
   .profile-card { grid-template-columns: 82px minmax(0, 1fr); gap: 13px; padding: 13px; }
   .site-nav { column-gap: 15px; }
   .section-heading { align-items: flex-start; flex-direction: column; }
+}
+
+/* The Life section takes its colours and ornament from Persian floral textiles. */
+.life-page {
+  --paper: #f8f2e2;
+  --surface: #fffcf3;
+  --ink: #304554;
+  --muted: #637077;
+  --accent: #465e74;
+  --line: #dfd2b6;
+}
+.life-page .site-header { border-top-color: #536b7c; }
+.life-page .brand-mark { border-color: #adbcb5; }
+.life-page .journal-layout { max-width: 1040px; padding-top: 38px; }
+.life-page .life-head {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 46px;
+  margin-bottom: 42px;
+  border: 1px solid #d3bc86;
+  border-radius: 3px;
+  background: #ffe8a7;
+}
+.life-floral-cover {
+  position: absolute;
+  inset: 0;
+  background: url("assets/persian-floral.svg") center / 510px 510px repeat;
+}
+.life-title-panel {
+  position: relative;
+  width: min(100%, 500px);
+  padding: 31px 38px 35px;
+  border: 1px solid #d9c8a1;
+  outline: 5px solid #fffcf3;
+  background: #fffcf3;
+}
+.life-page .persian-label {
+  margin-bottom: 0;
+  color: #536b7c;
+  font-size: 2.3rem;
+}
+.life-page .life-head h1 {
+  margin-bottom: 14px;
+  color: #304554;
+  font-size: clamp(3.1rem, 6vw, 4.2rem);
+}
+.life-page .life-intro { max-width: 365px; color: #596970; font-size: 1.04rem; }
+.life-page .journal-entry {
+  position: relative;
+  max-width: 880px;
+  margin-inline: auto;
+  padding: 35px 42px 39px;
+  border: 1px solid #dfd2b6;
+  border-top: 3px solid #b9c7b7;
+  border-radius: 2px;
+  background: #fffcf3;
+}
+.life-page .entry-meta {
+  align-items: center;
+  margin-bottom: 19px;
+  color: #536b7c;
+  font-size: .75rem;
+  letter-spacing: .025em;
+}
+.life-page .entry-meta::before { content: ""; width: 27px; height: 2px; background: #c7a265; }
+.life-page .journal-entry h2 { max-width: 690px; color: #304554; font-size: clamp(1.8rem, 3vw, 2.2rem); }
+.life-page .journal-entry > p:not(.entry-meta) { max-width: 660px; color: #596970; font-size: .98rem; }
+.life-page .journal-entry > a { display: inline-block; margin-top: 8px; color: #465e74; }
+.life-page .empty-note { max-width: 880px; margin-inline: auto; background: #fffcf3; }
+.life-page .site-footer { margin-top: 56px; }
+.life-page .site-footer::before {
+  content: "";
+  display: block;
+  height: 26px;
+  margin-bottom: 23px;
+  border-block: 1px solid #d3bc86;
+  background: #ffe8a7 url("assets/persian-floral.svg") center / 370px 370px repeat;
+}
+.life-page .footer-inner { border-top: 0; padding-top: 0; }
+
+@media (max-width: 820px) {
+  .life-page .life-head { padding: 32px; }
+  .life-title-panel { width: min(100%, 430px); padding: 25px 28px 30px; }
+  .life-floral-cover { background-size: 440px 440px; }
+  .life-page .journal-entry { padding: 30px; }
+}
+
+@media (max-width: 580px) {
+  .life-page .journal-layout { padding-top: 24px; }
+  .life-page .life-head { padding: 85px 18px 26px; margin-bottom: 28px; }
+  .life-floral-cover { background-size: 360px 360px; }
+  .life-title-panel { width: 100%; padding: 21px 23px 26px; outline-width: 4px; }
+  .life-page .persian-label { font-size: 1.9rem; }
+  .life-page .life-intro { font-size: .98rem; }
+  .life-page .journal-entry { padding: 25px 23px 29px; }
+  .life-page .entry-meta { gap: 5px 12px; font-size: .72rem; }
+  .life-page .journal-entry h2 { font-size: 1.85rem; }
+  .life-page .journal-entry > p:not(.entry-meta) { font-size: .92rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,7 +6,7 @@ tagline = Research & engineering
 # Optional: put a CV PDF inside this folder and enter its filename below.
 cv =
 email = tara.gheshlaghi@kit.edu
-location = Karlsruhe, Germany
+location = Germany
 copyright_year = 2026
 github = https://github.com/GhTara
 scholar = https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en
