@@ -1,0 +1,16 @@
+# Shared details. Edit the words after =, then run: python3 build.py
+
+[site]
+name = Tara Gheshlaghi
+email = tara.gheshlaghi@kit.edu
+location = Karlsruhe, Germany
+copyright_year = 2026
+github = https://github.com/GhTara
+scholar = https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en
+linkedin = https://www.linkedin.com/in/tara-gheshlaghi
+
+[navigation]
+research = Research
+writing = Writing
+life = Life
+about = About

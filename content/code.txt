@@ -1,0 +1,16 @@
+[page]
+title = Earlier code
+description = Earlier implementations of fuzzy neural networks and incremental decision trees by Tara Gheshlaghi.
+introduction = Implementations of established methods that helped build my foundations in machine learning.
+research_note = Looking for research software? Repository links are listed with
+research_link = each research project
+
+[project:fuzzy-cnn]
+title = Convolutional Fuzzy Neural Network
+body = Implementation of Hsu et al.’s Fuzzy-CNN architecture for object classification with a small training database.
+code = https://github.com/GhTara/Convolutional-Fuzzy-Neural-Network
+
+[project:id5]
+title = Incremental learning with ID5
+body = Implementation of Utgoff’s incremental decision-tree algorithm, with tree updates as new instances arrive and cross-validation for evaluation.
+code = https://github.com/GhTara/ID5_decision_tree_algorithm

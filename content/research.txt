@@ -1,0 +1,117 @@
+# Each [project:...] is one project. Keep its identifier to preserve existing links.
+# summary and short_title appear on the homepage; body appears only on Research.
+# Leave a blank line between paragraphs and indent all body lines with four spaces.
+
+[page]
+title = Research
+description = Research in hardware-aware machine learning, fault diagnosis, optimization, and medical imaging, with publications and code.
+introduction = Learning and optimization under the constraints of real devices.
+projects_label = Projects
+ongoing_heading = In progress
+reading_heading = Further reading
+publications_link = All publications
+archive_intro = For earlier implementations of fuzzy neural networks and incremental decision trees, visit
+archive_link = the code archive
+
+[project:atpg]
+title = Finding faults with compact test sets
+short_title = Compact tests for neural networks
+summary = Searching for inputs that reveal failures in neural networks.
+year = 2026
+venue = IEEE VTS
+credit = First-author research
+body =
+    A model can run successfully while producing wrong outputs because of hardware faults. I developed optimization methods to search for inputs that expose those failures, balancing fault coverage with test-set compactness.
+
+    ATPG-EA uses evolution strategies and includes experiments with bit flips, weight perturbations, and stuck-at faults across neural-network architectures. The repository contains the search code, experimental scripts, and workflow documentation.
+paper_title = Compact Functional Test Pattern Generation for DNNs Using Evolution Strategies.
+code = https://github.com/GhTara/ATPG-EA
+figure = atpg-workflow.png
+figure_alt = ATPG-EA workflow showing fault injection, CMA-ES search, and comparison of faulty and fault-free model predictions.
+figure_caption = Fault injection and evolutionary test generation. Figure from the project repository; select to enlarge.
+
+[project:adapt]
+title = Learning through device variation and sensor noise
+short_title = Learning with imperfect devices
+summary = Time-series learning with device variation and noisy sensors.
+year = 2025
+venue = DATE
+credit = First-author research
+body =
+    Printed devices vary, and sensor signals are noisy. ADAPT-pNC brings both into training by combining second-order learnable filters, sensor augmentation, and a printed neural-network model.
+
+    I evaluated the method on 15 time-series benchmark datasets. The release includes model definitions, augmentation settings, training scripts, and evaluation notebooks.
+paper_title = ADAPT-pNC: Mitigating Device Variability and Sensor Noise in Printed Neuromorphic Circuits with SO Adaptive Learnable Filters.
+code = https://github.com/KIT-Neuromorphic-Computing/ADAPT-pNC
+
+[project:dose]
+title = From 3D CT images to radiotherapy dose
+short_title = From medical images to dose maps
+summary = Connecting organ segmentation with radiotherapy dose prediction.
+year = 2024
+venue = Physics in Medicine & Biology
+short_venue = Phys. Med. Biol.
+credit = First-author research · MSc
+body =
+    My master’s research covered 3D CT preprocessing, organ-at-risk segmentation, and transformer-based dose prediction for head-and-neck radiotherapy. The cascade uses predicted organ segmentations, CT images, and target information to estimate a 3D dose map.
+
+    The implementation includes OAR-TRANSEG and DOSE-PYFER, with segmentation and dose-prediction models, training modules, and architecture figures.
+paper_title = A Cascade Transformer-Based Model for 3D Dose Distribution Prediction in Head and Neck Cancer Radiotherapy.
+paper = https://doi.org/10.1088/1361-6560/ad209a
+code = https://github.com/GhTara/Dose_Prediction
+figure = dose-pipeline.png
+figure_alt = Cascade architecture: CT images enter organ segmentation; CT, target information and predicted organs then enter dose prediction.
+figure_caption = Organ segmentation followed by dose prediction. Figure from the project repository; select to enlarge.
+
+[project:printed-tests]
+title = Generating tests for printed analog circuits
+year = 2025
+venue = IEEE ETS
+credit = First-author research
+body =
+    Device-level defects create a large fault space. This work groups faults with similar transfer functions and optimizes test inputs to increase the differences between healthy and faulty circuit responses.
+
+    The public release includes fault-injection models, clustering code, SPICE simulation scripts, and notebooks for test generation and analysis.
+paper_title = Automatic Test Pattern Generation for Printed Neuromorphic Circuits.
+code = https://github.com/KIT-Neuromorphic-Computing/ATPG_PNC
+
+[project:power]
+title = Training under a hardware power budget
+year = 2025
+venue = DAC
+credit = First-author research
+body =
+    Predictive accuracy is only part of the design objective when a circuit must meet a power budget. My work develops learning methods that account for this constraint during training.
+
+    The repository provides power-aware printed-network models, constrained training routines, and experiment code.
+paper_title = Power-Constrained Printed Neuromorphic Hardware Training.
+code = https://github.com/KIT-Neuromorphic-Computing/Power-Constrained-PNC
+
+[project:print-safe]
+title = PRINT-SAFE: adapting to printing defects
+year = 2025
+venue = ESWEEK
+credit = Co-authored research
+body =
+    Robust circuit components have a cost. In this collaborative work, fault-aware training uses differentiable selection to combine normal and fault-tolerant activation functions, balancing accuracy, reliability, and resources.
+
+    The release includes the mix-and-match model, an experiment entry point, and configuration options for fault ratios and activation types.
+paper_title = PRINT-SAFE: PRINTed ultra-low-cost electronic X-Design with Scalable Adaptive Fault Endurance.
+code = https://github.com/KIT-Neuromorphic-Computing/Fault_Aware_pNC
+
+[direction:flexible]
+title = Flexible analog classifiers
+body = Hardware-aware training and robustness evaluation for radial basis function networks implemented with flexible electronics.
+
+[direction:diagnosis]
+title = Printed-circuit diagnosis
+body = Using input–output behavior to distinguish faults and localize faulty components in printed neuromorphic circuits.
+
+[direction:layout]
+title = Device-level placement & routing
+body = Connecting Python optimization with Cadence Virtuoso through SKILL Bridge to explore layouts under connectivity, geometry, and area constraints.
+
+[publication:diagnosis]
+title = Diagnostic Test Generation for Fault Localization in Printed Neuromorphic Circuits.
+venue = DATE
+year = 2026

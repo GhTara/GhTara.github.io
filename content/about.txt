@@ -1,0 +1,53 @@
+[page]
+title = About
+description = Tara Gheshlaghi’s background, teaching, and supervision at Karlsruhe Institute of Technology.
+introduction = My path into AI began with medical images.
+biography =
+    I studied Computer Engineering and then Artificial Intelligence at Shahid Beheshti University in Tehran. Working on radiotherapy planning during my master’s taught me to care about the whole path from raw data to a useful result.
+
+    In November 2023, I joined the Chair of Dependable Nano Computing at Karlsruhe Institute of Technology. I’m interested in what happens when intelligent systems leave ideal software environments and meet the constraints of physical devices.
+
+    I enjoy work that crosses disciplines and becomes something concrete, and explaining technical ideas so people from different backgrounds can work together.
+background_heading = Background
+teaching_heading = Supervision & teaching
+teaching_introduction = I supervise student research in ML reliability and neural-network testing, from experimental design to evaluation and scientific communication.
+tools_heading = Tools I work with
+
+[background:phd]
+date = 2023–present
+title = PhD researcher
+place = Karlsruhe Institute of Technology
+
+[background:masters]
+date = 2023
+title = MSc, Artificial Intelligence
+place = Shahid Beheshti University
+
+[background:bachelors]
+date = 2020
+title = BSc, Computer Engineering
+place = Shahid Beheshti University
+
+[teaching:software]
+title = Software projects
+body = AIChat for KIT (LLM chatbot), RuleCity (reinforcement learning), and ZipSolver (puzzle solving and software testing).
+
+[teaching:bachelors]
+title = Bachelor’s projects
+body = Flex-Spike (analog spiking neural networks) and GradCircuit (differentiable circuit optimization).
+
+[teaching:assistance]
+title = Teaching assistance
+body = Deep Learning and Signals and Systems.
+
+[tools:learning]
+title = Learning & evaluation
+body = PyTorch, PyTorch Lightning, scikit-learn, Monte Carlo evaluation, MLflow.
+
+[tools:optimization]
+title = Optimization
+body = Evolution strategies, CMA-ES, gradient-based and constrained optimization.
+
+[tools:engineering]
+title = Data & engineering
+body = Python, 3D Slicer, simulation data, Cadence Virtuoso, SKILL Bridge, Git.

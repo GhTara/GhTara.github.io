@@ -1,0 +1,8 @@
+# Add notes using the same [entry:...] format as life.txt.
+# A note without a link displays its full body on this page.
+
+[page]
+title = Writing
+description = Technical notes by Tara Gheshlaghi on machine learning, optimization, and reliable computing.
+introduction = Notes on machine learning, optimization, and the questions behind my research.
+empty_message = The first notes are on their way.

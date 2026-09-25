@@ -1,0 +1,21 @@
+# To add a story, copy the [entry:...] block and give it a unique identifier.
+# date accepts YYYY-MM or YYYY-MM-DD. The latest dated note appears on Home.
+# body is plain text. Separate paragraphs with a blank line; indent their lines.
+# link is optional: omit it to publish the full text here instead.
+
+[page]
+title = Life
+description = A personal journal of cooking, learning, and everyday experiments by Tara Gheshlaghi.
+persian_title = زندگی
+introduction = Cooking, exploring, and small experiments beyond research.
+empty_message = More stories are on their way.
+
+[entry:carrot-cake]
+title = My First Carrot Cake: A Healthier Birthday Cake Experiment
+short_title = My first carrot cake
+date = 2026-06
+source = On Medium
+body =
+    A birthday cake experiment and a reminder that trying something new doesn’t require getting it perfect.
+link = https://medium.com/@LifeExplorer_/my-first-carrot-cake-a-healthier-birthday-cake-experiment-13bc5b2d79e7
+link_label = Read the story

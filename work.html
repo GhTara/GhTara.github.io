@@ -1,1 +1,146 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>Work · Tara Gheshlaghi</title><meta name="description" content="Research and projects in hardware-aware machine learning, fault diagnosis, optimization, and medical imaging."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main" style="position:absolute;left:-9999px;top:8px;background:white;padding:8px;z-index:10" onfocus="this.style.left='8px'" onblur="this.style.left='-9999px'">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">Tara Gheshlaghi</a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="work.html" aria-current="page">Work</a><a href="code.html">Code</a><a href="writing.html">Writing</a><a href="life.html">Life</a><a href="about.html">About</a></nav></div></header><main id="main"><div class="wrap"><div class="page-head"><div class="eyebrow">Research & engineering</div><h1>Work</h1><p>Learning methods, test generation, and optimization—grounded in data, hardware constraints, and experiments.</p><div class="jump-links"><a href="#atpg">ATPG-EA</a><a href="#adapt">ADAPT-pNC</a><a href="#dose">Dose_Prediction</a><a href="#printed-tests">ATPG_PNC</a><a href="#power">Power-Constrained-PNC</a><a href="#print-safe">Fault_Aware_pNC</a><a href="#ongoing">In progress</a><a href="#publications">Publications</a></div></div><article id="atpg" class="case-study"><div class="case-heading"><div><div class="small-label">Testing & optimization</div><h2>Finding faults with compact test sets</h2></div><div class="case-meta">First-author research<br>IEEE VTS · 2026</div></div><div class="case-grid"><div><h3>The problem</h3><p>A model can run successfully while producing wrong outputs because of hardware faults. Testing needs inputs that reveal those failures efficiently.</p><h3>My work</h3><p>I developed optimization methods for test generation and evaluated them across neural-network architectures and fault models. The framework combines fault coverage and test-set compactness in its search objective.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>The public implementation includes bit-flip, weight-perturbation, and stuck-at fault experiments, an evolutionary search workflow, and experimental scripts. Published at IEEE VTS 2026.</p><div class="method-tags"><span>CMA-ES</span><span>PyTorch</span><span>Fault injection</span></div><div class="project-links"><a href="https://github.com/GhTara/ATPG-EA" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Publications ↗</a></div></aside></div><figure class="research-figure"><a href="atpg-workflow.png" target="_blank" rel="noopener"><img src="atpg-workflow.png" alt="ATPG-EA workflow showing fault injection, CMA-ES search, and comparison of faulty and fault-free model predictions." loading="lazy"></a><figcaption>ATPG-EA architecture / workflow. <a href="https://github.com/GhTara/ATPG-EA" target="_blank" rel="noopener noreferrer">Source: project repository</a>. Open the figure for a larger view.</figcaption></figure></article><article id="adapt" class="case-study"><div class="case-heading"><div><div class="small-label">Robust time-series learning</div><h2>Learning through device variation and sensor noise</h2></div><div class="case-meta">First-author research<br>DATE · 2025</div></div><div class="case-grid"><div><h3>The problem</h3><p>Printed devices vary, and sensor signals are noisy. A model trained for ideal conditions may lose accuracy when either changes.</p><h3>My work</h3><p>I developed learning methods that bring device variation and sensor augmentation into training. ADAPT-pNC combines second-order learnable filters with a printed neural-network model.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>Evaluated on 15 time-series benchmark datasets. The release includes model definitions, augmentation settings, training scripts, and evaluation notebooks from the DATE 2025 work.</p><div class="method-tags"><span>Learnable filters</span><span>Variation-aware training</span><span>MLflow</span></div><div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/ADAPT-pNC" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Publications ↗</a></div></aside></div></article><article id="dose" class="case-study"><div class="case-heading"><div><div class="small-label">Medical image analysis</div><h2>From 3D CT images to radiotherapy dose</h2></div><div class="case-meta">First-author research · MSc<br>Physics in Medicine & Biology · 2024</div></div><div class="case-grid"><div><h3>The problem</h3><p>Radiotherapy planning requires reasoning about the tumor, nearby organs, and the spatial distribution of radiation dose.</p><h3>My work</h3><p>My master’s work covered 3D CT preprocessing, organ-at-risk segmentation, and transformer-based dose prediction. The cascade uses predicted organ segmentations together with CT and target information to estimate a 3D dose map.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>Published in Physics in Medicine & Biology. The repository contains OAR-TRANSEG and DOSE-PYFER components, training code, and architecture figures.</p><div class="method-tags"><span>Transformers</span><span>3D CNNs</span><span>PyTorch Lightning</span></div><div class="project-links"><a href="https://github.com/GhTara/Dose_Prediction" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://doi.org/10.1088/1361-6560/ad209a" target="_blank" rel="noopener noreferrer">Read paper ↗</a></div></aside></div><figure class="research-figure"><a href="dose-pipeline.png" target="_blank" rel="noopener"><img src="dose-pipeline.png" alt="Cascade architecture: CT images enter organ segmentation; CT, target information and predicted organs then enter dose prediction." loading="lazy"></a><figcaption>Dose_Prediction architecture / workflow. <a href="https://github.com/GhTara/Dose_Prediction" target="_blank" rel="noopener noreferrer">Source: project repository</a>. Open the figure for a larger view.</figcaption></figure></article><article id="printed-tests" class="case-study"><div class="case-heading"><div><div class="small-label">Printed-circuit testing</div><h2>Generating tests for printed analog circuits</h2></div><div class="case-meta">First-author research<br>IEEE ETS · 2025</div></div><div class="case-grid"><div><h3>The problem</h3><p>Device-level defects create a large fault space. Random inputs are not always effective at distinguishing faulty circuits from healthy ones.</p><h3>My work</h3><p>The work groups faults with similar transfer functions and optimizes test inputs to increase differences between healthy and faulty circuit responses.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>The public release includes fault-injection models, clustering code, SPICE simulation scripts, and notebooks for test generation and analysis.</p><div class="method-tags"><span>Gradient-based search</span><span>Clustering</span><span>SPICE simulation</span></div><div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/ATPG_PNC" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Publications ↗</a></div></aside></div></article><article id="power" class="case-study"><div class="case-heading"><div><div class="small-label">Constrained optimization</div><h2>Training under a hardware power budget</h2></div><div class="case-meta">First-author research<br>DAC · 2025</div></div><div class="case-grid"><div><h3>The problem</h3><p>Predictive accuracy is only part of the design objective when the circuit must also meet a power budget.</p><h3>My work</h3><p>My research develops learning methods under power constraints. The accompanying code includes power-aware printed-network models and constrained training routines.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>The research was published at DAC 2025. The repository provides model, training, and experiment code.</p><div class="method-tags"><span>Power-aware training</span><span>Constrained optimization</span><span>PyTorch</span></div><div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/Power-Constrained-PNC" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Publications ↗</a></div></aside></div></article><article id="print-safe" class="case-study"><div class="case-heading"><div><div class="small-label">Fault-aware learning</div><h2>PRINT-SAFE: adapting to printing defects</h2></div><div class="case-meta">Co-authored research<br>ESWEEK · 2025</div></div><div class="case-grid"><div><h3>The problem</h3><p>Robust circuit components have a cost. Choosing where to use them is a trade-off between accuracy, reliability, and resources.</p><h3>The approach</h3><p>In this collaborative work, fault-aware training uses differentiable selection to combine normal and fault-tolerant activation functions.</p></div><aside class="evidence-box"><h3>What came out of it</h3><p>The public release includes the mix-and-match model, an experiment entry point, and configuration options for fault ratios and activation types.</p><div class="method-tags"><span>Gumbel-Softmax</span><span>Architecture search</span><span>Fault-aware training</span></div><div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/Fault_Aware_pNC" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Publications ↗</a></div></aside></div></article><section class="section" id="ongoing"><div class="section-intro"><h2>Research in progress</h2><p>Current directions; public code and results will be linked when available.</p></div><div class="ongoing-grid"><article><h3>Flexible analog classifiers</h3><p>Hardware-aware training and robustness evaluation for radial basis function networks implemented with flexible electronics.</p></article><article><h3>Printed-circuit diagnosis</h3><p>Using input–output behavior to distinguish faults and localize faulty components in printed neuromorphic circuits.</p></article><article><h3>Device-level placement & routing</h3><p>Connecting Python optimization with Cadence Virtuoso through SKILL Bridge to explore layouts under connectivity, geometry, and area constraints.</p></article></div></section><section class="section" id="publications"><div class="section-intro"><h2>Selected publications</h2><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></div><ul class="publications"><li><strong>Compact Functional Test Pattern Generation for DNNs Using Evolution Strategies.</strong> <span>IEEE VTS, 2026.</span></li><li><strong>Diagnostic Test Generation for Fault Localization in Printed Neuromorphic Circuits.</strong> <span>DATE, 2026.</span></li><li><strong>Power-Constrained Printed Neuromorphic Hardware Training.</strong> <span>DAC, 2025.</span></li><li><strong>ADAPT-pNC: Mitigating Device Variability and Sensor Noise in Printed Neuromorphic Circuits with SO Adaptive Learnable Filters.</strong> <span>DATE, 2025.</span></li><li><strong>Automatic Test Pattern Generation for Printed Neuromorphic Circuits.</strong> <span>IEEE ETS, 2025.</span></li><li><strong>PRINT-SAFE: PRINTed ultra-low-cost electronic X-Design with Scalable Adaptive Fault Endurance.</strong> <span>ESWEEK, 2025 · co-author.</span></li><li><a href="https://doi.org/10.1088/1361-6560/ad209a" target="_blank" rel="noopener noreferrer">A Cascade Transformer-Based Model for 3D Dose Distribution Prediction in Head and Neck Cancer Radiotherapy.</a> <span>Physics in Medicine & Biology, 2024.</span></li></ul></section></div></main><footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Tara Gheshlaghi · Karlsruhe, Germany</span><span><a href="mailto:tara.gheshlaghi@kit.edu">Email</a> <a href="https://github.com/GhTara" target="_blank" rel="noopener noreferrer">GitHub</a> <a href="https://www.linkedin.com/in/tara-gheshlaghi" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a></span></div></footer></body></html>
+<!doctype html>
+<!-- Generated by build.py. Edit content/*.txt, then run python3 build.py. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#faf9f6">
+    <meta name="description" content="Research in hardware-aware machine learning, fault diagnosis, optimization, and medical imaging, with publications and code.">
+    <title>Research · Tara Gheshlaghi</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="index.html">Tara Gheshlaghi<span class="brand-dot" aria-hidden="true">.</span></a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="work.html" aria-current="page">Research</a>
+          <a href="writing.html">Writing</a>
+          <a href="life.html">Life</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="wrap" tabindex="-1">
+      <header class="page-head">
+        <h1>Research</h1>
+        <p>Learning and optimization under the constraints of real devices.</p>
+        <nav class="jump-links" aria-label="On this page"><a href="#atpg">Projects</a><a href="#ongoing">In progress</a><a href="#publications">Further reading</a></nav>
+      </header>
+
+      <article id="atpg" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">IEEE VTS · 2026<span>First-author research</span></p>
+          <h2>Finding faults with compact test sets</h2>
+        </header>
+        <div class="case-body">
+          <p>A model can run successfully while producing wrong outputs because of hardware faults. I developed optimization methods to search for inputs that expose those failures, balancing fault coverage with test-set compactness.</p>
+      <p>ATPG-EA uses evolution strategies and includes experiments with bit flips, weight perturbations, and stuck-at faults across neural-network architectures. The repository contains the search code, experimental scripts, and workflow documentation.</p>
+          <p class="publication"><cite>Compact Functional Test Pattern Generation for DNNs Using Evolution Strategies.</cite></p>
+          <div class="project-links"><a href="https://github.com/GhTara/ATPG-EA" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+        <figure class="research-figure">
+          <a href="atpg-workflow.png" target="_blank" rel="noopener">
+            <img src="atpg-workflow.png" alt="ATPG-EA workflow showing fault injection, CMA-ES search, and comparison of faulty and fault-free model predictions." loading="lazy">
+          </a>
+          <figcaption>Fault injection and evolutionary test generation. Figure from the project repository; select to enlarge.</figcaption>
+        </figure>
+      </article>
+
+      <article id="adapt" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">DATE · 2025<span>First-author research</span></p>
+          <h2>Learning through device variation and sensor noise</h2>
+        </header>
+        <div class="case-body">
+          <p>Printed devices vary, and sensor signals are noisy. ADAPT-pNC brings both into training by combining second-order learnable filters, sensor augmentation, and a printed neural-network model.</p>
+      <p>I evaluated the method on 15 time-series benchmark datasets. The release includes model definitions, augmentation settings, training scripts, and evaluation notebooks.</p>
+          <p class="publication"><cite>ADAPT-pNC: Mitigating Device Variability and Sensor Noise in Printed Neuromorphic Circuits with SO Adaptive Learnable Filters.</cite></p>
+          <div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/ADAPT-pNC" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+      </article>
+
+      <article id="dose" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">Physics in Medicine &amp; Biology · 2024<span>First-author research · MSc</span></p>
+          <h2>From 3D CT images to radiotherapy dose</h2>
+        </header>
+        <div class="case-body">
+          <p>My master’s research covered 3D CT preprocessing, organ-at-risk segmentation, and transformer-based dose prediction for head-and-neck radiotherapy. The cascade uses predicted organ segmentations, CT images, and target information to estimate a 3D dose map.</p>
+      <p>The implementation includes OAR-TRANSEG and DOSE-PYFER, with segmentation and dose-prediction models, training modules, and architecture figures.</p>
+          <p class="publication"><cite>A Cascade Transformer-Based Model for 3D Dose Distribution Prediction in Head and Neck Cancer Radiotherapy.</cite></p>
+          <div class="project-links"><a href="https://doi.org/10.1088/1361-6560/ad209a" target="_blank" rel="noopener noreferrer">Read paper ↗</a> <a href="https://github.com/GhTara/Dose_Prediction" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+        <figure class="research-figure">
+          <a href="dose-pipeline.png" target="_blank" rel="noopener">
+            <img src="dose-pipeline.png" alt="Cascade architecture: CT images enter organ segmentation; CT, target information and predicted organs then enter dose prediction." loading="lazy">
+          </a>
+          <figcaption>Organ segmentation followed by dose prediction. Figure from the project repository; select to enlarge.</figcaption>
+        </figure>
+      </article>
+
+      <article id="printed-tests" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">IEEE ETS · 2025<span>First-author research</span></p>
+          <h2>Generating tests for printed analog circuits</h2>
+        </header>
+        <div class="case-body">
+          <p>Device-level defects create a large fault space. This work groups faults with similar transfer functions and optimizes test inputs to increase the differences between healthy and faulty circuit responses.</p>
+      <p>The public release includes fault-injection models, clustering code, SPICE simulation scripts, and notebooks for test generation and analysis.</p>
+          <p class="publication"><cite>Automatic Test Pattern Generation for Printed Neuromorphic Circuits.</cite></p>
+          <div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/ATPG_PNC" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+      </article>
+
+      <article id="power" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">DAC · 2025<span>First-author research</span></p>
+          <h2>Training under a hardware power budget</h2>
+        </header>
+        <div class="case-body">
+          <p>Predictive accuracy is only part of the design objective when a circuit must meet a power budget. My work develops learning methods that account for this constraint during training.</p>
+      <p>The repository provides power-aware printed-network models, constrained training routines, and experiment code.</p>
+          <p class="publication"><cite>Power-Constrained Printed Neuromorphic Hardware Training.</cite></p>
+          <div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/Power-Constrained-PNC" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+      </article>
+
+      <article id="print-safe" class="case-study">
+        <header class="case-heading">
+          <p class="case-meta">ESWEEK · 2025<span>Co-authored research</span></p>
+          <h2>PRINT-SAFE: adapting to printing defects</h2>
+        </header>
+        <div class="case-body">
+          <p>Robust circuit components have a cost. In this collaborative work, fault-aware training uses differentiable selection to combine normal and fault-tolerant activation functions, balancing accuracy, reliability, and resources.</p>
+      <p>The release includes the mix-and-match model, an experiment entry point, and configuration options for fault ratios and activation types.</p>
+          <p class="publication"><cite>PRINT-SAFE: PRINTed ultra-low-cost electronic X-Design with Scalable Adaptive Fault Endurance.</cite></p>
+          <div class="project-links"><a href="https://github.com/KIT-Neuromorphic-Computing/Fault_Aware_pNC" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></div>
+        </div>
+      </article>
+      <section class="section" id="ongoing" aria-labelledby="ongoing-title">
+        <div class="section-heading"><h2 id="ongoing-title">In progress</h2></div>
+        <dl class="detail-list">
+        <div><dt>Flexible analog classifiers</dt><dd>Hardware-aware training and robustness evaluation for radial basis function networks implemented with flexible electronics.</dd></div>
+        <div><dt>Printed-circuit diagnosis</dt><dd>Using input–output behavior to distinguish faults and localize faulty components in printed neuromorphic circuits.</dd></div>
+        <div><dt>Device-level placement &amp; routing</dt><dd>Connecting Python optimization with Cadence Virtuoso through SKILL Bridge to explore layouts under connectivity, geometry, and area constraints.</dd></div>
+      </dl>
+      </section>
+      <section class="section" id="publications" aria-labelledby="further-reading">
+        <div class="section-heading"><h2 id="further-reading">Further reading</h2><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" class="text-link" target="_blank" rel="noopener noreferrer">All publications ↗</a></div><p class="additional-publication"><cite>Diagnostic Test Generation for Fault Localization in Printed Neuromorphic Circuits.</cite> <span class="quiet">DATE, 2026.</span></p><p class="quiet">For earlier implementations of fuzzy neural networks and incremental decision trees, visit <a href="code.html">the code archive →</a>.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <a class="contact-link" href="mailto:tara.gheshlaghi@kit.edu">tara.gheshlaghi@kit.edu</a>
+        <nav class="footer-links" aria-label="Find me elsewhere">
+          <a href="https://github.com/GhTara" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar ↗</a>
+          <a href="https://www.linkedin.com/in/tara-gheshlaghi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </nav>
+        <p class="copyright">© 2026 Tara Gheshlaghi · Karlsruhe, Germany</p>
+      </div>
+    </footer>
+  </body>
+</html>
