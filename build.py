@@ -59,7 +59,7 @@ def link(label, url, css='', accessible_label=''):
 def asset(filename):
     path = (ROOT / filename).resolve()
     if ROOT not in path.parents or not path.is_file():
-        raise ValueError(f'Missing local image: {filename}')
+        raise ValueError(f'Missing local asset: {filename}')
     return escape(filename, quote=True)
 
 
@@ -88,81 +88,104 @@ def section_heading(title, identifier, extra=''):
     return f'<div class="section-heading"><h2 id="{identifier}">{escape(title)}</h2>{extra}</div>'
 
 
-def render_home(home, research, journals):
+def render_profile(site, profile, home):
+    contacts = [link('Email ↗', 'mailto:' + site['email'])]
+    for key, label in [('scholar', 'Scholar'), ('github', 'GitHub'), ('linkedin', 'LinkedIn')]:
+        contacts.append(link(label + ' ↗', site[key]))
+    if site.get('cv'):
+        if not urlsplit(site['cv']).scheme:
+            asset(site['cv'])
+        contacts.append(link('CV ↗', site['cv']))
+    return f'''<aside class="profile-sidebar" aria-labelledby="profile-name">
+  <div class="profile-card">
+    <img class="profile-photo" src="{asset(home['photo'])}" alt="{escape(home['photo_alt'])}" width="1152" height="1536" fetchpriority="high">
+    <div class="profile-details">
+      <h2 id="profile-name">{escape(site['name'])}</h2>
+      <p class="profile-role">{escape(profile['role'])}</p>
+      <p class="profile-affiliation">{escape(profile['institution'])}</p>
+      <p class="profile-group">{escape(profile['group'])}</p>
+      <p class="profile-location">{escape(site['location'])}</p>
+      <div class="profile-links">{' '.join(contacts)}</div>
+    </div>
+  </div>
+  <div class="profile-focus">
+    <p class="sidebar-label">{escape(profile['focus_heading'])}</p>
+    <p>{escape(profile['focus'])}</p>
+  </div>
+</aside>'''
+
+
+def render_home(home, research, about, journals):
     page = home['page']
     poem = home['poem']
-    original = '<br>'.join(escape(line) for line in poem['persian'].strip().splitlines())
-    translation = '<br>'.join(escape(line) for line in poem['english'].strip().splitlines())
-    output = f'''<section class="hero" aria-labelledby="hello">
-  <div class="hero-copy">
-    <p class="eyebrow">{escape(page['role'])}</p>
-    <h1 id="hello">{escape(page['greeting'])}</h1>
-    <p class="lead">{escape(page['introduction'])}</p>
-    {link(page['about_link'] + ' →', 'about.html', 'text-link')}
-  </div>
-  <figure class="portrait">
-    <img src="{asset(page['photo'])}" alt="{escape(page['photo_alt'])}" width="1152" height="1536" fetchpriority="high">
-  </figure>
-</section>
-
-<figure class="poetry-note" aria-label="A verse from {escape(poem['author'])}">
-  <div class="verse-pair">
-    <blockquote class="verse-original" lang="fa" dir="rtl" cite="{safe_url(poem['source'])}">
-      <p>{original}</p>
-    </blockquote>
-    <blockquote class="verse-translation" lang="en" aria-label="English translation">
-      <p>“{translation}”</p>
-    </blockquote>
-  </div>
-  <figcaption>
-    <a href="{safe_url(poem['source'])}" target="_blank" rel="noopener noreferrer"><bdi lang="fa">{escape(poem['author_persian'])}</bdi> · {escape(poem['author'])}, <cite>{escape(poem['book'])}</cite>, {escape(poem['volume'])} ↗</a>
-  </figcaption>
-</figure>
-
-<section class="section" aria-labelledby="selected-research">
-  {section_heading(page['research_heading'], 'selected-research', link(page['research_link'] + ' →', 'work.html', 'text-link'))}
-  <div class="research-list">'''
     projects = dict(entries(research, 'project'))
+    project_cards = []
     for identifier in page['selected_projects'].split(','):
         identifier = identifier.strip()
         if identifier not in projects:
             raise ValueError(f'home.txt: selected project {identifier!r} is missing from research.txt.')
         project = projects[identifier]
-        actions = []
+        actions = [link('Project →', 'work.html#' + identifier)]
         for key, label in [('paper', 'Paper'), ('code', 'Code')]:
             if project.get(key):
                 actions.append(link(label + ' ↗', project[key], accessible_label=f"{label}: {project['title']}"))
-        title = project.get('short_title', project['title'])
-        output += f'''
-    <article class="research-row">
-      <p class="row-year">{escape(project['year'])}</p>
-      <div class="row-copy">
-        <h3>{link(title, 'work.html#' + identifier)}</h3>
-        <p>{escape(project['summary'])}</p>
-      </div>
-      <div class="row-meta">
-        <span>{escape(project.get('short_venue', project['venue']))}</span>
-        <div class="inline-links">{' '.join(actions)}</div>
-      </div>
-    </article>'''
-    output += '\n  </div>\n</section>'
+        thumbnail = project.get('thumbnail', project.get('figure'))
+        if thumbnail:
+            alt = project.get('thumbnail_alt', project.get('figure_alt', project['title']))
+            preview = f'<img src="{asset(thumbnail)}" alt="{escape(alt)}" loading="lazy">'
+        else:
+            preview = f'<span class="thumbnail-label">{escape(project.get("short_venue", project["venue"]))}<br>{escape(project["year"])}</span>'
+        project_cards.append(f'''<article class="research-card">
+  <a class="research-thumbnail" href="work.html#{identifier}" aria-label="Explore {escape(project['title'])}">{preview}</a>
+  <div class="research-card-body">
+    <p class="research-meta"><span>{escape(project.get('short_venue', project['venue']))} · {escape(project['year'])}</span><span>{escape(project['credit'])}</span></p>
+    <h3>{link(project.get('short_title', project['title']), 'work.html#' + identifier)}</h3>
+    <p class="research-summary">{escape(project['summary'])}</p>
+    <div class="project-links">{' '.join(actions)}</div>
+  </div>
+</article>''')
+
+    education = []
+    for _, item in entries(about, 'background'):
+        education.append(f'<div><dt>{escape(item["date"])}</dt><dd><strong>{escape(item["title"])}</strong><span>{escape(item["place"])}</span></dd></div>')
+    mentoring = []
+    for _, item in entries(about, 'teaching'):
+        if item.get('preview'):
+            mentoring.append(f'<li><span>{escape(item["title"])}</span>{escape(item["preview"])}</li>')
 
     notes = []
     for filename, journal in journals:
         for identifier, entry in entries(journal, 'entry'):
             notes.append((entry_date(entry), filename, identifier, entry, journal['page']['title']))
+    notebook = ''
     if notes:
         _, filename, identifier, entry, journal_title = max(notes, key=lambda note: note[0])
-        output += f'''
-
-<section class="section notebook-section" aria-labelledby="notebook">
+        notebook = f'''<section class="section notebook-section" aria-labelledby="notebook">
   {section_heading(page['notebook_heading'], 'notebook', link(journal_title + ' →', filename, 'text-link'))}
   <a class="notebook-link" href="{filename}#{identifier}">
     <span>{escape(entry.get('short_title', entry['title']))}</span>
     <span class="note-date"><time datetime="{escape(entry['date'])}">{date_label(entry)}</time><span aria-hidden="true">→</span></span>
   </a>
 </section>'''
-    return output
+
+    template = Template((ROOT / 'templates' / 'home.html').read_text(encoding='utf-8'))
+    return template.substitute(
+        eyebrow=escape(page['eyebrow']), greeting=escape(page['greeting']),
+        introduction=escape(page['introduction']), biography=paragraphs(about['page']['biography']),
+        intro_actions=link(page['research_link'] + ' →', 'work.html', 'button-link') + link(page['about_link'] + ' →', 'about.html', 'text-link'),
+        poem_author=escape(poem['author']), poem_source=safe_url(poem['source']),
+        poem_author_persian=escape(poem['author_persian']), poem_book=escape(poem['book']), poem_volume=escape(poem['volume']),
+        original='<br>'.join(escape(line) for line in poem['persian'].strip().splitlines()),
+        translation='<br>'.join(escape(line) for line in poem['english'].strip().splitlines()),
+        research_heading=section_heading(page['research_heading'], 'selected-research', link(page['research_link'] + ' →', 'work.html', 'text-link')),
+        projects='\n'.join(project_cards),
+        background_heading=section_heading(page['background_heading'], 'academic-background', link(page['about_link'] + ' →', 'about.html', 'text-link')),
+        education_heading=escape(page['education_heading']), education='\n'.join(education),
+        teaching_heading=escape(about['page']['teaching_heading']), teaching_summary=escape(page['teaching_summary']),
+        mentoring='\n'.join(mentoring), teaching_link=link(page['teaching_link'] + ' →', 'about.html#mentoring', 'text-link'),
+        skills_heading=section_heading(page['skills_heading'], 'technical-skills'),
+        skills=detail_list(entries(about, 'tools')), notebook=notebook,
+    )
 
 
 def detail_list(items):
@@ -248,7 +271,7 @@ def render_journal(content, personal=False):
 
 def render_about(content):
     page = content['page']
-    output = page_head(page) + f'<div class="prose biography">{paragraphs(page["biography"])}</div>'
+    output = page_head(page)
     output += f'<section class="section" aria-labelledby="background">{section_heading(page["background_heading"], "background")}<dl class="timeline">'
     for _, item in entries(content, 'background'):
         output += f'<div><dt>{escape(item["date"])}</dt><dd><strong>{escape(item["title"])}</strong><span>{escape(item["place"])}</span></dd></div>'
@@ -276,7 +299,7 @@ def build_pages():
     labels = content['site']['navigation']
     template = Template((ROOT / 'templates' / 'page.html').read_text(encoding='utf-8'))
     bodies = {
-        'home': render_home(content['home'], content['research'], [('writing.html', content['writing']), ('life.html', content['life'])]),
+        'home': render_home(content['home'], content['research'], content['about'], [('writing.html', content['writing']), ('life.html', content['life'])]),
         'research': render_research(content['research'], site),
         'writing': render_journal(content['writing']),
         'life': render_journal(content['life'], personal=True),
@@ -287,7 +310,7 @@ def build_pages():
     for name, body in bodies.items():
         page = content[name]['page']
         navigation = []
-        for key, filename in [('research', 'work.html'), ('writing', 'writing.html'), ('life', 'life.html'), ('about', 'about.html')]:
+        for key, filename in [('home', 'index.html'), ('research', 'work.html'), ('about', 'about.html'), ('writing', 'writing.html'), ('life', 'life.html')]:
             current = ' aria-current="page"' if name == key else ''
             navigation.append(f'          <a href="{filename}"{current}>{escape(labels[key])}</a>')
         values = {key: escape(value) for key, value in site.items()}
@@ -296,7 +319,10 @@ def build_pages():
         values.update(
             title=escape(page['title']), description=escape(page['description']),
             theme_color='#faf7ef' if name == 'life' else '#faf9f6',
-            body_class=' class="life-page"' if name == 'life' else '',
+            body_class=f' class="{name}-page"',
+            layout_class='journal-layout' if name in ('writing', 'life') else 'academic-layout',
+            profile='' if name in ('writing', 'life') else render_profile(site, content['site']['profile'], content['home']['page']),
+            initials=escape(''.join(part[0] for part in site['name'].split())),
             home_current=' aria-current="page"' if name == 'home' else '',
             navigation='\n'.join(navigation), content=indent(dedent(body).strip(), '      '),
         )

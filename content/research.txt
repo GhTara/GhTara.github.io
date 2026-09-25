@@ -31,6 +31,8 @@ figure_alt = ATPG-EA workflow showing fault injection, CMA-ES search, and compar
 figure_caption = Fault injection and evolutionary test generation. Figure from the project repository; select to enlarge.
 
 [project:adapt]
+thumbnail = assets/adapt-signal.svg
+thumbnail_alt = Illustration of a temporal signal passing through a learnable filter.
 title = Learning through device variation and sensor noise
 short_title = Learning with imperfect devices
 summary = Time-series learning with device variation and noisy sensors.

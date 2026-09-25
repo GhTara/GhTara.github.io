@@ -1,0 +1,49 @@
+<section class="profile-intro" id="overview" aria-labelledby="intro-title">
+  <p class="eyebrow">$eyebrow</p>
+  <h1 id="intro-title">$greeting</h1>
+  <p class="intro-lead">$introduction</p>
+  <div class="intro-biography">$biography</div>
+  <div class="intro-actions">$intro_actions</div>
+</section>
+
+<figure class="poetry-note" aria-label="A verse from $poem_author">
+  <div class="verse-pair">
+    <blockquote class="verse-original" lang="fa" dir="rtl" cite="$poem_source">
+      <p>$original</p>
+    </blockquote>
+    <blockquote class="verse-translation" lang="en" aria-label="English translation">
+      <p>“$translation”</p>
+    </blockquote>
+  </div>
+  <figcaption>
+    <a href="$poem_source" target="_blank" rel="noopener noreferrer"><bdi lang="fa">$poem_author_persian</bdi> · $poem_author, <cite>$poem_book</cite>, $poem_volume ↗</a>
+  </figcaption>
+</figure>
+
+<section class="section highlights-section" aria-labelledby="selected-research">
+  $research_heading
+  <div class="research-list">$projects</div>
+</section>
+
+<section class="section" aria-labelledby="academic-background">
+  $background_heading
+  <div class="background-grid">
+    <div class="background-panel">
+      <h3>$education_heading</h3>
+      <dl class="compact-timeline">$education</dl>
+    </div>
+    <div class="background-panel mentoring-panel">
+      <h3>$teaching_heading</h3>
+      <p>$teaching_summary</p>
+      <ul class="mentoring-preview">$mentoring</ul>
+      $teaching_link
+    </div>
+  </div>
+</section>
+
+<section class="section skills-section" aria-labelledby="technical-skills">
+  $skills_heading
+  $skills
+</section>
+
+$notebook

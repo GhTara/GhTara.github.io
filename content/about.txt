@@ -1,14 +1,13 @@
 [page]
-title = About
+title = Background
 description = Tara Gheshlaghi’s background, teaching, and supervision at Karlsruhe Institute of Technology.
-introduction = My path into AI began with medical images.
+introduction = Education, student supervision, and the tools behind my research.
+# This biography appears on Home. Detailed background is listed below.
 biography =
-    I studied Computer Engineering and then Artificial Intelligence at Shahid Beheshti University in Tehran. Working on radiotherapy planning during my master’s taught me to care about the whole path from raw data to a useful result.
+    Since November 2023, I’ve been part of the Chair of Dependable Nano Computing at Karlsruhe Institute of Technology. I develop methods to train models for variable devices, reveal hardware faults through testing, and work within power and resource constraints.
 
-    In November 2023, I joined the Chair of Dependable Nano Computing at Karlsruhe Institute of Technology. I’m interested in what happens when intelligent systems leave ideal software environments and meet the constraints of physical devices.
-
-    I enjoy work that crosses disciplines and becomes something concrete, and explaining technical ideas so people from different backgrounds can work together.
-background_heading = Background
+    My background is in Computer Engineering and Artificial Intelligence at Shahid Beheshti University in Tehran. My master’s research focused on 3D medical image analysis and radiotherapy dose prediction. Today, my work spans learning algorithms, simulation, and experimental evaluation for emerging hardware.
+background_heading = Education & appointments
 teaching_heading = Supervision & teaching
 teaching_introduction = I supervise student research in ML reliability and neural-network testing, from experimental design to evaluation and scientific communication.
 tools_heading = Tools I work with
@@ -30,14 +29,17 @@ place = Shahid Beheshti University
 
 [teaching:software]
 title = Software projects
+preview = AIChat for KIT, RuleCity, ZipSolver
 body = AIChat for KIT (LLM chatbot), RuleCity (reinforcement learning), and ZipSolver (puzzle solving and software testing).
 
 [teaching:bachelors]
 title = Bachelor’s projects
+preview = Flex-Spike, GradCircuit
 body = Flex-Spike (analog spiking neural networks) and GradCircuit (differentiable circuit optimization).
 
 [teaching:assistance]
 title = Teaching assistance
+preview = Deep Learning; Signals and Systems
 body = Deep Learning and Signals and Systems.
 
 [tools:learning]

@@ -10,30 +10,46 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="index.html" aria-current="page">Tara Gheshlaghi<span class="brand-dot" aria-hidden="true">.</span></a>
+        <a class="brand" href="index.html" aria-current="page"><span class="brand-mark" aria-hidden="true">TG</span><span class="brand-text">Tara Gheshlaghi<small>Research &amp; engineering</small></span></a>
         <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
           <a href="work.html">Research</a>
+          <a href="about.html">Background</a>
           <a href="writing.html">Writing</a>
           <a href="life.html">Life</a>
-          <a href="about.html">About</a>
         </nav>
       </div>
     </header>
-    <main id="main" class="wrap" tabindex="-1">
-      <section class="hero" aria-labelledby="hello">
-        <div class="hero-copy">
-          <p class="eyebrow">PhD researcher at Karlsruhe Institute of Technology</p>
-          <h1 id="hello">Hi, I’m Tara.</h1>
-          <p class="lead">I work on machine learning and optimization for reliable, resource-efficient computing.</p>
-          <a href="about.html" class="text-link">A little about me →</a>
-        </div>
-        <figure class="portrait">
-          <img src="photo.jpg" alt="Tara Gheshlaghi outdoors" width="1152" height="1536" fetchpriority="high">
-        </figure>
+    <main id="main" class="wrap academic-layout" tabindex="-1">
+<aside class="profile-sidebar" aria-labelledby="profile-name">
+  <div class="profile-card">
+    <img class="profile-photo" src="photo.jpg" alt="Tara Gheshlaghi outdoors" width="1152" height="1536" fetchpriority="high">
+    <div class="profile-details">
+      <h2 id="profile-name">Tara Gheshlaghi</h2>
+      <p class="profile-role">PhD researcher</p>
+      <p class="profile-affiliation">Karlsruhe Institute of Technology</p>
+      <p class="profile-group">Chair of Dependable Nano Computing</p>
+      <p class="profile-location">Karlsruhe, Germany</p>
+      <div class="profile-links"><a href="mailto:tara.gheshlaghi@kit.edu">Email ↗</a> <a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar ↗</a> <a href="https://github.com/GhTara" target="_blank" rel="noopener noreferrer">GitHub ↗</a> <a href="https://www.linkedin.com/in/tara-gheshlaghi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+    </div>
+  </div>
+  <div class="profile-focus">
+    <p class="sidebar-label">Research focus</p>
+    <p>Machine learning, optimization, and emerging computing systems.</p>
+  </div>
+</aside>
+      <div class="page-content">
+      <section class="profile-intro" id="overview" aria-labelledby="intro-title">
+        <p class="eyebrow">Machine learning · Optimization · Reliable systems</p>
+        <h1 id="intro-title">Research with real-world constraints.</h1>
+        <p class="intro-lead">I’m Tara, a PhD researcher working on machine learning and optimization for reliable, resource-efficient computing.</p>
+        <div class="intro-biography"><p>Since November 2023, I’ve been part of the Chair of Dependable Nano Computing at Karlsruhe Institute of Technology. I develop methods to train models for variable devices, reveal hardware faults through testing, and work within power and resource constraints.</p>
+      <p>My background is in Computer Engineering and Artificial Intelligence at Shahid Beheshti University in Tehran. My master’s research focused on 3D medical image analysis and radiotherapy dose prediction. Today, my work spans learning algorithms, simulation, and experimental evaluation for emerging hardware.</p></div>
+        <div class="intro-actions"><a href="work.html" class="button-link">All research →</a><a href="about.html" class="text-link">Full background →</a></div>
       </section>
 
       <figure class="poetry-note" aria-label="A verse from Molana">
@@ -50,52 +66,74 @@
         </figcaption>
       </figure>
 
-      <section class="section" aria-labelledby="selected-research">
-        <div class="section-heading"><h2 id="selected-research">Selected research</h2><a href="work.html" class="text-link">All research →</a></div>
-        <div class="research-list">
-          <article class="research-row">
-            <p class="row-year">2026</p>
-            <div class="row-copy">
-              <h3><a href="work.html#atpg">Compact tests for neural networks</a></h3>
-              <p>Searching for inputs that reveal failures in neural networks.</p>
-            </div>
-            <div class="row-meta">
-              <span>IEEE VTS</span>
-              <div class="inline-links"><a href="https://github.com/GhTara/ATPG-EA" target="_blank" rel="noopener noreferrer" aria-label="Code: Finding faults with compact test sets">Code ↗</a></div>
-            </div>
-          </article>
-          <article class="research-row">
-            <p class="row-year">2025</p>
-            <div class="row-copy">
-              <h3><a href="work.html#adapt">Learning with imperfect devices</a></h3>
-              <p>Time-series learning with device variation and noisy sensors.</p>
-            </div>
-            <div class="row-meta">
-              <span>DATE</span>
-              <div class="inline-links"><a href="https://github.com/KIT-Neuromorphic-Computing/ADAPT-pNC" target="_blank" rel="noopener noreferrer" aria-label="Code: Learning through device variation and sensor noise">Code ↗</a></div>
-            </div>
-          </article>
-          <article class="research-row">
-            <p class="row-year">2024</p>
-            <div class="row-copy">
-              <h3><a href="work.html#dose">From medical images to dose maps</a></h3>
-              <p>Connecting organ segmentation with radiotherapy dose prediction.</p>
-            </div>
-            <div class="row-meta">
-              <span>Phys. Med. Biol.</span>
-              <div class="inline-links"><a href="https://doi.org/10.1088/1361-6560/ad209a" target="_blank" rel="noopener noreferrer" aria-label="Paper: From 3D CT images to radiotherapy dose">Paper ↗</a> <a href="https://github.com/GhTara/Dose_Prediction" target="_blank" rel="noopener noreferrer" aria-label="Code: From 3D CT images to radiotherapy dose">Code ↗</a></div>
-            </div>
-          </article>
+      <section class="section highlights-section" aria-labelledby="selected-research">
+        <div class="section-heading"><h2 id="selected-research">Research highlights</h2><a href="work.html" class="text-link">All research →</a></div>
+        <div class="research-list"><article class="research-card">
+        <a class="research-thumbnail" href="work.html#atpg" aria-label="Explore Finding faults with compact test sets"><img src="atpg-workflow.png" alt="ATPG-EA workflow showing fault injection, CMA-ES search, and comparison of faulty and fault-free model predictions." loading="lazy"></a>
+        <div class="research-card-body">
+          <p class="research-meta"><span>IEEE VTS · 2026</span><span>First-author research</span></p>
+          <h3><a href="work.html#atpg">Compact tests for neural networks</a></h3>
+          <p class="research-summary">Searching for inputs that reveal failures in neural networks.</p>
+          <div class="project-links"><a href="work.html#atpg">Project →</a> <a href="https://github.com/GhTara/ATPG-EA" target="_blank" rel="noopener noreferrer" aria-label="Code: Finding faults with compact test sets">Code ↗</a></div>
+        </div>
+      </article>
+      <article class="research-card">
+        <a class="research-thumbnail" href="work.html#adapt" aria-label="Explore Learning through device variation and sensor noise"><img src="assets/adapt-signal.svg" alt="Illustration of a temporal signal passing through a learnable filter." loading="lazy"></a>
+        <div class="research-card-body">
+          <p class="research-meta"><span>DATE · 2025</span><span>First-author research</span></p>
+          <h3><a href="work.html#adapt">Learning with imperfect devices</a></h3>
+          <p class="research-summary">Time-series learning with device variation and noisy sensors.</p>
+          <div class="project-links"><a href="work.html#adapt">Project →</a> <a href="https://github.com/KIT-Neuromorphic-Computing/ADAPT-pNC" target="_blank" rel="noopener noreferrer" aria-label="Code: Learning through device variation and sensor noise">Code ↗</a></div>
+        </div>
+      </article>
+      <article class="research-card">
+        <a class="research-thumbnail" href="work.html#dose" aria-label="Explore From 3D CT images to radiotherapy dose"><img src="dose-pipeline.png" alt="Cascade architecture: CT images enter organ segmentation; CT, target information and predicted organs then enter dose prediction." loading="lazy"></a>
+        <div class="research-card-body">
+          <p class="research-meta"><span>Phys. Med. Biol. · 2024</span><span>First-author research · MSc</span></p>
+          <h3><a href="work.html#dose">From medical images to dose maps</a></h3>
+          <p class="research-summary">Connecting organ segmentation with radiotherapy dose prediction.</p>
+          <div class="project-links"><a href="work.html#dose">Project →</a> <a href="https://doi.org/10.1088/1361-6560/ad209a" target="_blank" rel="noopener noreferrer" aria-label="Paper: From 3D CT images to radiotherapy dose">Paper ↗</a> <a href="https://github.com/GhTara/Dose_Prediction" target="_blank" rel="noopener noreferrer" aria-label="Code: From 3D CT images to radiotherapy dose">Code ↗</a></div>
+        </div>
+      </article></div>
+      </section>
+
+      <section class="section" aria-labelledby="academic-background">
+        <div class="section-heading"><h2 id="academic-background">Experience &amp; education</h2><a href="about.html" class="text-link">Full background →</a></div>
+        <div class="background-grid">
+          <div class="background-panel">
+            <h3>Academic path</h3>
+            <dl class="compact-timeline"><div><dt>2023–present</dt><dd><strong>PhD researcher</strong><span>Karlsruhe Institute of Technology</span></dd></div>
+      <div><dt>2023</dt><dd><strong>MSc, Artificial Intelligence</strong><span>Shahid Beheshti University</span></dd></div>
+      <div><dt>2020</dt><dd><strong>BSc, Computer Engineering</strong><span>Shahid Beheshti University</span></dd></div></dl>
+          </div>
+          <div class="background-panel mentoring-panel">
+            <h3>Supervision &amp; teaching</h3>
+            <p>Alongside research, I supervise student projects in machine learning reliability and software development.</p>
+            <ul class="mentoring-preview"><li><span>Software projects</span>AIChat for KIT, RuleCity, ZipSolver</li>
+      <li><span>Bachelor’s projects</span>Flex-Spike, GradCircuit</li>
+      <li><span>Teaching assistance</span>Deep Learning; Signals and Systems</li></ul>
+            <a href="about.html#mentoring" class="text-link">Supervision &amp; teaching details →</a>
+          </div>
         </div>
       </section>
 
+      <section class="section skills-section" aria-labelledby="technical-skills">
+        <div class="section-heading"><h2 id="technical-skills">Technical skills</h2></div>
+        <dl class="detail-list">
+        <div><dt>Learning &amp; evaluation</dt><dd>PyTorch, PyTorch Lightning, scikit-learn, Monte Carlo evaluation, MLflow.</dd></div>
+        <div><dt>Optimization</dt><dd>Evolution strategies, CMA-ES, gradient-based and constrained optimization.</dd></div>
+        <div><dt>Data &amp; engineering</dt><dd>Python, 3D Slicer, simulation data, Cadence Virtuoso, SKILL Bridge, Git.</dd></div>
+      </dl>
+      </section>
+
       <section class="section notebook-section" aria-labelledby="notebook">
-        <div class="section-heading"><h2 id="notebook">From the notebook</h2><a href="life.html" class="text-link">Life →</a></div>
+        <div class="section-heading"><h2 id="notebook">Beyond the research</h2><a href="life.html" class="text-link">Life →</a></div>
         <a class="notebook-link" href="life.html#carrot-cake">
           <span>My first carrot cake</span>
           <span class="note-date"><time datetime="2026-06">June 2026</time><span aria-hidden="true">→</span></span>
         </a>
       </section>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">

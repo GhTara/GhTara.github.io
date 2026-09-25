@@ -2,6 +2,9 @@
 
 [site]
 name = Tara Gheshlaghi
+tagline = Research & engineering
+# Optional: put a CV PDF inside this folder and enter its filename below.
+cv =
 email = tara.gheshlaghi@kit.edu
 location = Karlsruhe, Germany
 copyright_year = 2026
@@ -10,7 +13,15 @@ scholar = https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en
 linkedin = https://www.linkedin.com/in/tara-gheshlaghi
 
 [navigation]
+home = Home
 research = Research
 writing = Writing
 life = Life
-about = About
+about = Background
+
+[profile]
+role = PhD researcher
+institution = Karlsruhe Institute of Technology
+group = Chair of Dependable Nano Computing
+focus_heading = Research focus
+focus = Machine learning, optimization, and emerging computing systems.

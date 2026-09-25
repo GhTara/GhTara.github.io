@@ -14,15 +14,17 @@ Changing a `.txt` file alone does not update the visible website until you run t
 
 | File | Content |
 | --- | --- |
-| `content/home.txt` | Introduction, portrait path, Persian verse, English translation, selected project IDs |
+| `content/home.txt` | Homepage introduction, section labels, portrait path, Persian verse, selected project IDs |
 | `content/research.txt` | Research projects, paper/code links, ongoing work, publications |
 | `content/life.txt` | Personal stories |
 | `content/writing.txt` | Technical notes |
-| `content/about.txt` | Biography, education, supervision, tools |
+| `content/about.txt` | Homepage biography, education, supervision, technical skills |
 | `content/code.txt` | Earlier code implementations |
-| `content/site.txt` | Name, email, social links, navigation labels, footer |
+| `content/site.txt` | Profile sidebar, name, email, social links, optional CV, navigation, footer |
 
-The homepage reads project details from `research.txt` and the latest dated note from `writing.txt` or `life.txt`. You only maintain each entry in one place.
+The homepage reads research highlights from `research.txt`, biography and experience from `about.txt`, and the latest dated note from `writing.txt` or `life.txt`. The full biography appears only on Home; the Background page provides the detailed education and supervision entries. The sidebar uses the `[profile]` section of `site.txt`. You only maintain each entry in one place.
+
+To add your CV later, copy the PDF into the website folder and set `cv = your-cv.pdf` in `site.txt`. Leaving that field empty hides the CV link.
 
 ## Writing text
 
@@ -68,7 +70,7 @@ Omit those fields to publish the full body directly on your own site.
 
 ## Adding research
 
-Copy an existing `[project:...]` block in `research.txt` and use a new identifier. Keep existing identifiers when editing an existing project so saved links still work. `paper` and `figure` are optional. A figure needs `figure_alt` and `figure_caption` too.
+Copy an existing `[project:...]` block in `research.txt` and use a new identifier. Keep existing identifiers when editing an existing project so saved links still work. `paper` and `figure` are optional. A separate `thumbnail` with `thumbnail_alt` can illustrate the homepage preview; otherwise it uses the project figure or a venue label. A figure needs `figure_alt` and `figure_caption` too.
 
 To feature a project on the homepage, give it `summary` and optionally `short_title`, then add its identifier to `selected_projects` in `home.txt`. The full `body` remains on Research. Put images in this website folder or its `assets/` directory.
 
@@ -80,4 +82,4 @@ python3 build.py --check
 
 This checks whether your generated pages match the text files. Build errors leave the previously generated pages intact.
 
-The layout lives in `build.py`, `templates/page.html`, and `style.css`. You do not need to edit them for ordinary content updates. The Persian font and its license are stored locally in `assets/fonts/`; no external font service is used.
+The layout lives in `build.py`, `templates/`, and `style.css`. You do not need to edit them for ordinary content updates. The Persian font and its license are stored locally in `assets/fonts/`; no external font service is used.

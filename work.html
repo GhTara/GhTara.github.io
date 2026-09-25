@@ -10,20 +10,39 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="research-page">
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="index.html">Tara Gheshlaghi<span class="brand-dot" aria-hidden="true">.</span></a>
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">TG</span><span class="brand-text">Tara Gheshlaghi<small>Research &amp; engineering</small></span></a>
         <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
           <a href="work.html" aria-current="page">Research</a>
+          <a href="about.html">Background</a>
           <a href="writing.html">Writing</a>
           <a href="life.html">Life</a>
-          <a href="about.html">About</a>
         </nav>
       </div>
     </header>
-    <main id="main" class="wrap" tabindex="-1">
+    <main id="main" class="wrap academic-layout" tabindex="-1">
+<aside class="profile-sidebar" aria-labelledby="profile-name">
+  <div class="profile-card">
+    <img class="profile-photo" src="photo.jpg" alt="Tara Gheshlaghi outdoors" width="1152" height="1536" fetchpriority="high">
+    <div class="profile-details">
+      <h2 id="profile-name">Tara Gheshlaghi</h2>
+      <p class="profile-role">PhD researcher</p>
+      <p class="profile-affiliation">Karlsruhe Institute of Technology</p>
+      <p class="profile-group">Chair of Dependable Nano Computing</p>
+      <p class="profile-location">Karlsruhe, Germany</p>
+      <div class="profile-links"><a href="mailto:tara.gheshlaghi@kit.edu">Email ↗</a> <a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar ↗</a> <a href="https://github.com/GhTara" target="_blank" rel="noopener noreferrer">GitHub ↗</a> <a href="https://www.linkedin.com/in/tara-gheshlaghi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+    </div>
+  </div>
+  <div class="profile-focus">
+    <p class="sidebar-label">Research focus</p>
+    <p>Machine learning, optimization, and emerging computing systems.</p>
+  </div>
+</aside>
+      <div class="page-content">
       <header class="page-head">
         <h1>Research</h1>
         <p>Learning and optimization under the constraints of real devices.</p>
@@ -130,6 +149,7 @@
       <section class="section" id="publications" aria-labelledby="further-reading">
         <div class="section-heading"><h2 id="further-reading">Further reading</h2><a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" class="text-link" target="_blank" rel="noopener noreferrer">All publications ↗</a></div><p class="additional-publication"><cite>Diagnostic Test Generation for Fault Localization in Printed Neuromorphic Circuits.</cite> <span class="quiet">DATE, 2026.</span></p><p class="quiet">For earlier implementations of fuzzy neural networks and incremental decision trees, visit <a href="code.html">the code archive →</a>.</p>
       </section>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">

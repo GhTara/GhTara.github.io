@@ -10,25 +10,45 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="code-page">
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="index.html">Tara Gheshlaghi<span class="brand-dot" aria-hidden="true">.</span></a>
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">TG</span><span class="brand-text">Tara Gheshlaghi<small>Research &amp; engineering</small></span></a>
         <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
           <a href="work.html">Research</a>
+          <a href="about.html">Background</a>
           <a href="writing.html">Writing</a>
           <a href="life.html">Life</a>
-          <a href="about.html">About</a>
         </nav>
       </div>
     </header>
-    <main id="main" class="wrap" tabindex="-1">
+    <main id="main" class="wrap academic-layout" tabindex="-1">
+<aside class="profile-sidebar" aria-labelledby="profile-name">
+  <div class="profile-card">
+    <img class="profile-photo" src="photo.jpg" alt="Tara Gheshlaghi outdoors" width="1152" height="1536" fetchpriority="high">
+    <div class="profile-details">
+      <h2 id="profile-name">Tara Gheshlaghi</h2>
+      <p class="profile-role">PhD researcher</p>
+      <p class="profile-affiliation">Karlsruhe Institute of Technology</p>
+      <p class="profile-group">Chair of Dependable Nano Computing</p>
+      <p class="profile-location">Karlsruhe, Germany</p>
+      <div class="profile-links"><a href="mailto:tara.gheshlaghi@kit.edu">Email ↗</a> <a href="https://scholar.google.com/citations?user=p8arCtwAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar ↗</a> <a href="https://github.com/GhTara" target="_blank" rel="noopener noreferrer">GitHub ↗</a> <a href="https://www.linkedin.com/in/tara-gheshlaghi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+    </div>
+  </div>
+  <div class="profile-focus">
+    <p class="sidebar-label">Research focus</p>
+    <p>Machine learning, optimization, and emerging computing systems.</p>
+  </div>
+</aside>
+      <div class="page-content">
       <header class="page-head">
         <h1>Earlier code</h1>
         <p>Implementations of established methods that helped build my foundations in machine learning.</p>
         <a href="work.html" class="back-link">← Research</a>
       </header><section class="section archive-section" aria-label="Earlier implementations"><article class="archive-entry" id="fuzzy-cnn"><h2>Convolutional Fuzzy Neural Network</h2><p>Implementation of Hsu et al.’s Fuzzy-CNN architecture for object classification with a small training database.</p><a href="https://github.com/GhTara/Convolutional-Fuzzy-Neural-Network" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></article><article class="archive-entry" id="id5"><h2>Incremental learning with ID5</h2><p>Implementation of Utgoff’s incremental decision-tree algorithm, with tree updates as new instances arrive and cross-validation for evaluation.</p><a href="https://github.com/GhTara/ID5_decision_tree_algorithm" target="_blank" rel="noopener noreferrer">Code &amp; documentation ↗</a></article></section><p class="archive-note">Looking for research software? Repository links are listed with <a href="work.html">each research project</a>.</p>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">

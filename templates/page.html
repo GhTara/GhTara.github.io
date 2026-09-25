@@ -14,14 +14,17 @@
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="index.html"$home_current>$name<span class="brand-dot" aria-hidden="true">.</span></a>
+        <a class="brand" href="index.html"$home_current><span class="brand-mark" aria-hidden="true">$initials</span><span class="brand-text">$name<small>$tagline</small></span></a>
         <nav class="site-nav" aria-label="Main navigation">
 $navigation
         </nav>
       </div>
     </header>
-    <main id="main" class="wrap" tabindex="-1">
+    <main id="main" class="wrap $layout_class" tabindex="-1">
+$profile
+      <div class="page-content">
 $content
+      </div>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">

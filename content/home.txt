@@ -4,16 +4,21 @@
 [page]
 title = Home
 description = Tara Gheshlaghi is a PhD researcher at KIT working on machine learning, optimization, and reliable emerging computing systems.
-role = PhD researcher at Karlsruhe Institute of Technology
-greeting = Hi, I’m Tara.
-introduction = I work on machine learning and optimization for reliable, resource-efficient computing.
-about_link = A little about me
+eyebrow = Machine learning · Optimization · Reliable systems
+greeting = Research with real-world constraints.
+introduction = I’m Tara, a PhD researcher working on machine learning and optimization for reliable, resource-efficient computing.
+about_link = Full background
 photo = photo.jpg
 photo_alt = Tara Gheshlaghi outdoors
-research_heading = Selected research
+research_heading = Research highlights
 research_link = All research
 selected_projects = atpg, adapt, dose
-notebook_heading = From the notebook
+background_heading = Experience & education
+education_heading = Academic path
+teaching_summary = Alongside research, I supervise student projects in machine learning reliability and software development.
+teaching_link = Supervision & teaching details
+skills_heading = Technical skills
+notebook_heading = Beyond the research
 
 [poem]
 persian =
