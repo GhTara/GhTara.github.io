@@ -90,7 +90,7 @@ def section_heading(title, identifier, extra=''):
 
 def render_profile(site, profile, home):
     contacts = [link('Email ↗', 'mailto:' + site['email'])]
-    for key, label in [('scholar', 'Scholar'), ('github', 'GitHub'), ('linkedin', 'LinkedIn')]:
+    for key, label in [('kit', 'KIT profile'), ('scholar', 'Scholar'), ('github', 'GitHub'), ('linkedin', 'LinkedIn')]:
         contacts.append(link(label + ' ↗', site[key]))
     if site.get('cv'):
         if not urlsplit(site['cv']).scheme:
@@ -314,7 +314,7 @@ def build_pages():
             current = ' aria-current="page"' if name == key else ''
             navigation.append(f'          <a href="{filename}"{current}>{escape(labels[key])}</a>')
         values = {key: escape(value) for key, value in site.items()}
-        for key in ('github', 'scholar', 'linkedin'):
+        for key in ('kit', 'github', 'scholar', 'linkedin'):
             values[key] = safe_url(site[key])
         values.update(
             title=escape(page['title']), description=escape(page['description']),

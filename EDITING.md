@@ -20,7 +20,7 @@ Changing a `.txt` file alone does not update the visible website until you run t
 | `content/writing.txt` | Technical notes |
 | `content/about.txt` | Homepage biography, education, supervision, technical skills |
 | `content/code.txt` | Earlier code implementations |
-| `content/site.txt` | Profile sidebar, name, email, social links, optional CV, navigation, footer |
+| `content/site.txt` | Profile sidebar, name, email, KIT profile, social links, optional CV, navigation, footer |
 
 The homepage reads research highlights from `research.txt`, biography and experience from `about.txt`, and the latest dated note from `writing.txt` or `life.txt`. The full biography appears only on Home; the Background page provides the detailed education and supervision entries. The sidebar uses the `[profile]` section of `site.txt`. You only maintain each entry in one place.
 

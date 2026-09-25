@@ -5,9 +5,10 @@ name = Tara Gheshlaghi
 tagline = Research & engineering
 # Optional: put a CV PDF inside this folder and enter its filename below.
 cv =
-email = tara.gheshlaghi@kit.edu
+email = gheshlaghitara@gmail.com
 location = Germany
 copyright_year = 2026
+kit = https://cdnc.itec.kit.edu/21_1292.php
 github = https://github.com/GhTara
 scholar = https://scholar.google.com/citations?user=p8arCtwAAAAJ&hl=en
 linkedin = https://www.linkedin.com/in/tara-gheshlaghi
